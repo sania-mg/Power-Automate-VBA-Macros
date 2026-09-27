@@ -5,7 +5,7 @@ lab:
   duration: 30 minutes
 ---
 
-# Practice Lab 4 – Approval flow
+# Practice Lab 3 – Approval flow
 
 In this lab you will create an approval flow.
 
