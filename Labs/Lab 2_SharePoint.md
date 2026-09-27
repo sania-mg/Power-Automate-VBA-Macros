@@ -1,11 +1,8 @@
 ---
 lab:
-  title: 'Lab 3: SharePoint'
-  module: 'Module 3: Build approval flows with Power Automate'
+  title: 'Lab 2: SharePoint'
   description: In this lab you will create a SharePoint site and list.
   duration: 30 minutes
-  level: 100
-  islab: true
 ---
 
 # Practice Lab 3 – SharePoint
