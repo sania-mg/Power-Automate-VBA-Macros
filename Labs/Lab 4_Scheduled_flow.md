@@ -5,7 +5,7 @@ lab:
   duration: 25 minutes
 ---
 
-# Practice Lab 6 – Scheduled flow
+# Practice Lab 4 – Scheduled flow
 
 In this lab you will create a scheduled flow.
 
