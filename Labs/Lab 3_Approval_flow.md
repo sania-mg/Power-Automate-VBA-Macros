@@ -22,7 +22,7 @@ In this lab you will create an approval flow.
   
 ## Prerequisites
 
-- Must have completed **Lab 3: SharePoint**
+- Must have completed **Lab 2: SharePoint**
 
 ## Detailed steps
 
