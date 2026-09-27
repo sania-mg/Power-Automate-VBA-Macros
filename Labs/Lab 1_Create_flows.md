@@ -3,8 +3,6 @@ lab:
   title: 'Lab 1: Create cloud flows'
   description: In this lab you will create cloud flows.
   duration: 30 minutes
-  level: 100
-  islab: true
 ---
 
 # Practice Lab 1 – Create cloud flows
