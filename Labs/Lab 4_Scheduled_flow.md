@@ -1,0 +1,179 @@
+---
+lab:
+  title: 'Lab 6: Scheduled flow'
+  module: 'Module 5: Power Automate’s deep integration across multiple data sources'
+  description: In this lab you will create a scheduled flow.
+  duration: 25 minutes
+  level: 100
+  islab: true
+---
+
+# Practice Lab 6 – Scheduled flow
+
+In this lab you will create a scheduled flow.
+
+## What you will learn
+
+- How to create a Power Automate scheduled flow and process a list of SharePoint items.
+
+## High-level lab steps
+
+- Create a scheduled flow
+- Query SharePoint list
+- Use Data operations
+- Test the flow
+  
+## Prerequisites
+
+- Must have completed **Lab 3: SharePoint**
+
+## Detailed steps
+
+## Exercise 1 – Create scheduled flow
+
+### Task 1.1 - Create the trigger
+
+1. Navigate to the Power Automate portal `https://make.powerautomate.com`
+
+1. Make sure you are in the **Dev One** environment.
+
+1. Select **+ Create** from the left navigation menu.
+
+1. Select **Scheduled cloud flow**.
+
+1. Enter `Daily New Tasks` for **Flow name**.
+
+1. Set **Repeat every** to **1** **Day**.
+
+    ![Screenshot of build a scheduled flow.](../media/build-scheduled-flow.png)
+
+1. Select **Create**.
+
+### Task 1.2 - Configure the trigger
+
+1. Select the **Recurrence** trigger.
+
+1. Select the **Recurrence** trigger name and enter `Daily`
+
+> [!NOTE]
+> If you encounter an issue editing the trigger name, use **Copilot** to rename it.  
+> Select **Copilot**, and in the Copilot chat enter the following prompt:
+> `Rename the trigger to Daily`.
+
+### Task 1.3 - Query new tasks
+
+1. Select the **+** icon under the trigger to add an action.
+
+1. Enter `list items` in the search box.
+
+1. Select **Get items** under **SharePoint**.
+
+1. Select **Get items** action name and enter `New tasks`
+
+1. Select or enter the **Power Automate SharePoint site URL** for **Site Address**.
+
+1. Select **Tasks** for **List Name**.
+
+1. Next to **Advanced parameters**, select **Show all**.
+
+1. Select the **Filter Query** field and enter `ApprovalStatus eq 'New'`
+
+    ![Screenshot of list items query.](../media/list-items.png)
+
+### Task 1.4 - Select columns
+
+1. Select the **+** icon under the **New tasks** to add an action.
+
+1. Enter `Select` in the search box.
+
+1. Select **Built-in**.
+
+    ![Screenshot searching for Select action.](../media/add-select-action.png)
+
+1. Select **Select** under **Data Operation**.
+
+1. Select the **From** field and select the **Dynamic content** icon.
+
+1. Select **body/value** under **New tasks**.
+
+1. Select the **Enter key** field and enter `Task`
+
+1. Select the **Enter value** field, then select the **Dynamic content** icon.
+
+1. Select **Title** from **New tasks**.
+
+1. Select the **Enter key** field and enter `Description`
+
+1. Select the **Enter value** field, then select the **Dynamic content** icon.
+
+1. Select **Description** from **New tasks**.
+
+1. Select the **Enter key** field and enter `Due`
+
+1. Select the **Enter value** field, select the **Dynamic content** icon, and then select **See more**.
+
+1. Select **Deadline** from **New tasks**.
+
+    ![Screenshot of Select action.](../media/select-action.png)
+
+1. If the flow designer has automatically added one or more For Each loops, drag the **Select** action outside of the loops and delete the loop(s).
+
+    ![Screenshot of flow steps without loops.](../media/flow-without-loops.png)
+
+### Task 1.5 - Create table
+
+1. Select the **+** icon under the **Select** action to add an action.
+
+1. Enter `create html` in the search box.
+
+1. Select **Built-in**.
+
+1. Select **Create HTML table** under **Data Operation**.
+
+1. Select **Create HTML table** action name and enter `Format as HTML table`
+
+1. Select the **From** field and select the **Dynamic content** icon.
+
+1. Select **Output** from **Select**.
+
+    ![Screenshot of Format HTML table action.](../media/format-html-action.png)
+
+### Task 1.6 - Send email
+
+1. Select the **+** icon under the **Format as HTML table** action to add an action.
+
+1. Enter `email` in the search box.
+
+1. Select **Send an email (V2)** under **Office 365 Outlook**.
+
+1. Select the **Send an email (V2)** action name and enter `Notify by email`
+
+1. Select the **To** field and enter `MOD Administrator`.
+
+1. Select your tenant user email for **To**.
+
+1. Select the **Subject** field and enter `Daily Tasks`
+
+1. Select the **Body** field and select the **Dynamic content** icon.
+
+1. Select **Output** from **Format as HTML table**.
+
+1. Select **Save**.
+
+## Exercise 2 – Test scheduled flow
+
+### Task 2.1 - Run scheduled flow manually
+
+1. Select **Test**
+
+1. Select **Manually**.
+
+1. Select **Test**.
+
+1. Select **Run flow**.
+
+1. Select **Done**.
+
+1. In the Power Automate portal, select the **App launcher** in the top left of the browser window and then select **Outlook**.
+
+    ![Screenshot of Format HTML table action.](../media/daily-tasks-email.png)
