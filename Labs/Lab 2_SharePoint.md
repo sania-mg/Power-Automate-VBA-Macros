@@ -5,7 +5,7 @@ lab:
   duration: 30 minutes
 ---
 
-# Practice Lab 3 – SharePoint
+# Practice Lab 2 – SharePoint
 
 In this lab you will create a SharePoint site and list.
 
