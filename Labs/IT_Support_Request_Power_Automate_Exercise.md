@@ -29,12 +29,11 @@ When a request is submitted:
 
 ---
 
+# Part 1: Create the Microsoft Form
 
-# Part 1: Create the SharePoint List from Form
+Create a Microsoft Form named:
 
-Create a SharePoint List from Form named:
-
-**IT Support Requests**
+**IT Support Request**
 
 Add the following questions:
 
@@ -48,10 +47,27 @@ Add the following questions:
 
 Save the form.
 
+---
 
-# Part 2: Add new column to SharePoint List
+# Part 2: Create the SharePoint List
 
-Once the SharePoint List is created, add another column for Status fo type choice with the following options:
+Create a SharePoint List named:
+
+**IT Support Requests**
+
+Create the following columns:
+
+| Column Name | Type | Configuration |
+|---|---|---|
+| Title | Single line of text | Use Employee Name or Ticket Subject |
+| EmployeeName | Single line of text | — |
+| EmployeeEmail | Single line of text | — |
+| IssueCategory | Choice | Hardware, Software, Network, Access Request |
+| IssueDescription | Multiple lines of text | — |
+| Priority | Choice | Low, Medium, High |
+| Status | Choice | New, In Progress, Resolved |
+
+For the **Status** column, use:
 
 - New
 - In Progress
